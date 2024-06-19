@@ -1,0 +1,10 @@
+@use '../abstract/mixins';
+@use'../abstract/variaveis';
+
+footer{
+    @include mixins.ff-fs-fc(variaveis.$ft-titulos,1.5rem,variaveis.$cor-primaria);
+    margin-top: 5rem;
+    padding: 2rem;
+    background: variaveis.$cor-quaternaria;
+    text-align: center;
+}

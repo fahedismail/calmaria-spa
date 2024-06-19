@@ -1,0 +1,85 @@
+@use '../abstract/mixins';
+@use'../abstract/variaveis';
+
+#contatos{
+    @include mixins.margem-central(80%);
+    display: flex;
+    gap:1.5rem;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+
+    .contatos-imgs{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        max-width: 50%;
+        img{
+            width: 100%;
+            &:nth-child(n+2){
+                width: 48%;
+            }
+        }
+    }
+
+    .contatos-form{
+        max-width: 50%;
+        background: variaveis.$gradiente-primario;
+        padding: 2rem 3rem;
+        border-radius: 2rem;
+        
+        .titulo{
+            @include mixins.ff-fs-fc(variaveis.$ft-titulos,1.5rem,variaveis.$cor-secundaria);
+        }
+        .infos{
+            @include mixins.ff-fs-fc(variaveis.$ft-textos,1rem,variaveis.$cor-primaria);
+        }
+        
+
+        .inputs{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.5rem;
+            align-self: stretch;
+            
+            .form-group{
+                display: flex;
+                flex-direction: column;
+                gap: .5rem;
+                width: 100%;
+                label{
+                    margin-left: .5rem;
+                @extend .infos;
+                font-weight: bold;
+                }
+                input{
+                    border-radius: 25px;
+                    padding: 1rem;
+                    border: none;
+                    }
+                }
+                
+                textarea{
+                    @extend input;
+                }
+
+            }
+            .btn{
+                align-self: center;
+                background: variaveis.$cor-default;
+                border: none;
+                padding: .8rem 0;
+                margin: 2rem 0 0 0;
+                width: 100%;
+                border-radius: 48px;
+                @include mixins.ff-fs-fc(variaveis.$ft-textos,1rem,#ffffff);
+                transition: .3s;
+
+            }
+                .btn:hover{
+                    background: variaveis.$cor-secundaria;
+                    color: #ffffff;
+                }
+        }
+        }
